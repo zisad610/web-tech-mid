@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Tech Connect - Event Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Global Tech Connect</h1>
+      <p class="subtitle">
+        Register for our upcoming workshop, webinar, or networking event.
+      </p>
+
+      <form id="registrationForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="required">*</span></label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+          />
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Professional Email <span class="required">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your professional email"
+          />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company / Institution</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Enter company or institution (optional)"
+          />
+          <small class="error" id="companyError"></small>
+        </div>
+
+        <div class="form-group">
+          <label>Attendance Type <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="attendanceType" value="Virtual" />
+              Virtual
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="attendanceType" value="In-Person" />
+              In-Person
+            </label>
+          </div>
+          <small class="error" id="attendanceError"></small>
+        </div>
+
+        <button type="submit" class="btn primary-btn">Register Now</button>
+      </form>
+
+      <div class="analytics-section">
+        <button id="toggleAnalyticsBtn" class="btn secondary-btn">
+          Show Event Analytics
+        </button>
+
+        <div id="analyticsPanel" class="analytics-panel hidden">
+          <h2>Event Analytics</h2>
+          <div class="stats-box">
+            <p><strong>Total Number of Registrants:</strong> <span id="totalRegistrants">0</span></p>
+            <p><strong>Virtual:</strong> <span id="virtualCount">0</span></p>
+            <p><strong>In-Person:</strong> <span id="inPersonCount">0</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="successMessage" class="success-message"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
